@@ -16,10 +16,10 @@ const useStorage = (file) => {
           let percentage =(snap.bytesTransferred / snap.bytesTransferred.totalBytes) * 100;
           setProgress(percentage);
 
-      }, (err) => {
+       }, (err) => {
           setError(err);
 
-      }, async () => {
+       }, async () => {
           const url = await storageRef.getDownloadURL();
           const createdAt = timestamp();
           collectionRef.add({ url, createdAt });
